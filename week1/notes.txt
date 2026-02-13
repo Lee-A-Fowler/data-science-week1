@@ -1,1 +1,2 @@
-Git is a version control that tracks changes to files
+Git is a version control that tracks changes to files.
+Check the boxes of files you want to commit in the git pane, then click commit, add a useful comment and push (green arrow).
