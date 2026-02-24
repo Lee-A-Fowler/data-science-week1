@@ -1,0 +1,6 @@
+What is the expected range for biological values, e.g. age, body mass?
+Are there any missing values that need to be accounted for?
+Any relationship between treatment and % eggs hatched?
+or between site and % eggs hatched?
+or age and % eggs hatched?
+Some negative values in body_mass
