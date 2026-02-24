@@ -1,0 +1,321 @@
+=============================================================================
+TUTORIAL 1: CHECKING STRINGS - APPLICATION CHECKLIST
+================================================================================
+
+[X] I completed the tutorial exercises
+
+
+CONNECTING TO MY DATA:
+----------------------
+
+1. Did I identify any string-related questions in my Week 1 questions list?
+
+   [X] YES - Question #(s): ___________
+   [ ] NO - Skip to question 4
+
+
+2. If YES, which technique from this tutorial could help address my question?
+
+   [ ] str_to_lower() - standardize capitalization
+   [ ] str_to_upper() - standardize capitalization  
+   [ ] str_trim() - remove leading/trailing whitespace
+   [ ] str_replace() - fix typos or inconsistent spellings
+   [X] Other: _str_to_sentence()_
+   [ ] None of these apply
+
+
+3. Show what this technique would DO to my data:
+
+   Variable name: __treatment____
+   
+   Example values BEFORE:
+   - MEDIUM_DOSE
+   - Medium_dose
+   - medium_dose
+   
+   What they would become AFTER:
+   - Medium_dose
+   - Medium_dose
+   - Medium_dose
+
+
+4. If this tutorial is NOT relevant to my data:
+
+   Why not? (Check all that apply)
+   [ ] I don't have any character/text variables
+   [ ] My text variables are already clean
+   [ ] My string issues are different from what this tutorial covers
+   [ ] Other: ___________
+
+
+================================================================================
+
+================================================================================
+TUTORIAL 2: CHECKING DATES - APPLICATION CHECKLIST
+================================================================================
+
+[X] I completed the tutorial exercises
+
+
+
+CONNECTING TO MY DATA:
+----------------------
+
+1. Did I identify any date-related questions in my Week 1 questions list?
+
+   [ ] YES - Question #(s): ___________
+   [X] NO - Skip to question 5
+
+
+2. If YES, which technique from this tutorial could help address my question?
+
+   [ ] dmy() / ymd() / mdy() - parse dates in different formats
+   [ ] excel_numeric_to_date() - convert Excel serial numbers
+   [ ] Checking for impossible dates (wrong day/month/year)
+   [ ] Other: ___________
+   [ ] None of these apply
+
+
+3. Show what this technique would DO to my data:
+
+   Variable name: ___________
+   
+   Example values BEFORE:
+   - 
+   - 
+   - 
+   
+   What they would become AFTER:
+   - 
+   - 
+   - 
+
+
+4. Think about consequences:
+
+   What assumption am I making about date format?
+   (e.g., "01/12/2023 is DD/MM/YYYY not MM/DD/YYYY")
+   
+   
+   What could go wrong if this assumption is incorrect?
+   
+   
+   How could I verify my assumption is correct?
+   
+
+
+5. If this tutorial is NOT relevant to my data:
+
+   Why not?
+   [ ] I don't have any date variables
+   [ ] My dates are already in proper format
+   [ ] My date issues are different from what this tutorial covers
+   [ ] Other: ___________
+
+
+================================================================================
+
+
+================================================================================
+TUTORIAL 3: CHECKING MISSING DATA PATTERNS - APPLICATION CHECKLIST
+================================================================================
+
+[X] I completed the tutorial exercises
+
+
+CONNECTING TO MY DATA:
+----------------------
+
+1. Did I identify any missing data questions in my Week 1 questions list?
+
+   [X] YES - Question #(s): NAs present in collector, body_mass, eggs_laid, eggs_hatched
+   [ ] NO - But I'll check anyway (missing data is common)
+
+
+2. Which variables have the most missing data?
+
+   Variable: body_mass    | Percent missing: 7.3%
+   Variable: collector | Percent missing: 6.3%
+   Variable: eggs_laid | Percent missing: 7.8%
+ Variable: eggs_hatched | Percent missing: 8.3%
+ 
+
+3. Missingness types checklist
+
+
+   [ ] MCAR (Missing Completely At Random) - appears random/scattered
+   [X] MAR (Missing At Random) - related to other observed variables: eggs laid and eggs hatched??
+   [X] MNAR (Missing Not At Random) - related to the missing value itself 
+
+Why is it important to know what type of missing data we have? 
+So we know whether it should be included in our analyses (and if future methods/protocol needs to be changed)
+
+================================================================================
+
+
+================================================================================
+TUTORIAL 4: CHECKING DUPLICATES - APPLICATION CHECKLIST
+================================================================================
+
+[X] I completed the tutorial exercises
+
+
+CONNECTING TO MY DATA:
+----------------------
+
+1. Did I identify any duplicate-related questions in my Week 1 questions list?
+
+   [ ] YES - Question #(s): ___________
+   [X] NO - But I'll check anyway
+
+
+3. Think about consequences:
+
+   If I remove duplicates, what am I assuming?
+   
+   That these are accidentally duplicated rows or repeated measurements of the same things, and not results that were coincidentally the same and should be included in analysis.
+   
+   
+   If duplicates are actually repeated measures, what should I do instead?
+   [ ] Keep them - they're legitimate observations
+   [X] Flag them for later analysis that accounts for non-independence
+   [ ] Other: ___________
+   
+   
+================================================================================
+
+
+================================================================================
+TUTORIAL 5: NUMERIC & CROSS-VARIABLE CONSISTENCY - APPLICATION CHECKLIST
+================================================================================
+
+[X] I completed the tutorial exercises
+
+
+PART A: NUMERIC PLAUSIBILITY
+-----------------------------
+
+1. Did I identify any numeric plausibility questions in my Week 1 questions list?
+
+   [X] YES - Question #(s): ___________
+   [ ] NO - Skip to Part B
+
+
+2. If YES, which numeric variable looks suspicious?
+
+   Variable name: body_mass_mg
+   
+   Minimum value: -93  | Is this biologically possible? [ ] Yes [X] No [ ] Unsure
+   Maximum value: 109  | Is this biologically possible? [ ] Yes [ ] No [X] Unsure
+   
+
+   Why do these look wrong?
+   [X] Negative value (impossible for this measurement)
+   [ ] Zero (should be NA instead)
+   [ ] Too large (exceeds known biological maximum)
+   [ ] Too small (below known biological minimum)
+   [ ] Possible units confusion (mixed kg and g?)
+   [ ] Other: ___________
+
+
+
+PART B: CROSS-VARIABLE CONSISTENCY
+-----------------------------------
+
+4. Did I identify any cross-variable questions in my Week 1 questions list?
+
+   [ ] YES - Question #(s): ___________
+   [X] NO - But I'll check anyway
+
+
+5. Choose TWO variables that should be related (e.g., body length and body mass,
+   sex and reproductive status, species and location):
+
+   Variable 1: eggs_laid
+   Variable 2: eggs_hatched
+   
+   What relationship do I expect between them?
+   [X] Positive correlation (both increase together)
+   [ ] Negative correlation (one increases, other decreases)
+   [X] Biological constraint (certain combinations impossible)
+   [ ] Spatial constraint (certain combinations shouldn't occur)
+   [ ] Other: ___________
+   
+   Describe the expected relationship:
+   
+I expect more eggs laid to be positively correlated with more eggs hatched, and eggs hatched cannot be greater than eggs laid.
+
+6. Think about consequences:
+
+   If these variables are inconsistent, what should I do?
+   [ ] Remove the observations
+   [ ] Convert one variable to NA (which one? _________)
+   [X] Flag for review but keep both
+   [X] Query the data collector
+   [ ] Other: ___________
+   
+   Justification:
+   
+Impossible values (e.g. more eggs hatched than laid) should not be used in analysis.
+
+================================================================================
+
+
+
+
+WEEK 2 CLEANING PLAN
+====================
+Name: Lee Fowler
+Date: 20-02-2026
+
+I've completed all 5 tutorials and application checklists.
+
+Looking across all my checklists, these are the 2 most important issues 
+to address in Week 2:
+
+
+ISSUE 1 (Most Important)
+-------------------------
+Brief description: Inconsistent/impossible negative values, and check if body mass unit/decimal place is correct.
+
+Which tutorial provides the solution: 7 Check Data Consistency
+
+Which variable(s) affected: body_mass_mg
+
+Why this is important to fix: 
+The impossible negative values will skew the data and make means, analysis results, etc. incorrect. If the unit or decimal place is wrong for some/most values, any analysis will be wrong.
+
+What I plan to do: 
+Remove "-" from all impossible negative values that would be within normal range when positive, and check if small body mass values (<10 are within a believable range)
+
+
+ISSUE 2 (Second Most Important)
+--------------------------------
+Brief description: Duplicate rows
+
+Which tutorial provides the solution: 4 Duplicates
+
+Which variable(s) affected: all variables
+
+Why this is important to fix: unhelpful weighting given to duplicate values, analysis may be incorrect, show false results.
+
+What I plan to do: Create new column with duplicates removed.
+
+
+OTHER ISSUES I NOTICED (but won't fix in Week 2)
+-------------------------------------------------
+- [Issue 3 - will address later if time]
+- Missing data
+- [Issue 5 - decided to leave as-is because...]
+
+
+QUESTIONS TO DISCUSS IN WEEK 2
+-------------------------------
+Things I'm still unsure about:
+
+1. Is there an easy way to see what different date formats have been used in a dataset?
+
+2. 
+
+3.
+
