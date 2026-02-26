@@ -140,7 +140,7 @@ mosquito_egg_data<- mosquito_egg_data |>  mutate(site = case_when(
 mosquito_egg_data |>  distinct(site)
   
   # What changed and why it matters:
-  # Site names are all consistent and data can now be filtered??? by site
+  # Site names are all consistent and data can now be filtered by site
   
   
 
@@ -212,7 +212,7 @@ mosquito_egg_data |>
 
 # Fix it:
 
-# Keep only unduplicated data ????
+# Keep only unduplicated data - not sure why this isn't workning ????
 mosquito_egg_data <- mosquito_egg_data |> 
   mutate( distinct(mosquito_egg_data))
 
